@@ -85,7 +85,7 @@ myplot <- function(data, colour){
 }
 
 # sup fig 1
-upset(myData, nsets = 8)
+upset(myData, nsets = 8, nintersects = 30, order.by = "freq")
 
 # sup fig 4
 upset(myData, nsets = 8,
