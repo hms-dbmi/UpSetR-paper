@@ -1,4 +1,4 @@
-#setwd("/Users/jakeconway/Desktop/ICGC")
+setwd("/Users/jakeconway/Desktop/ICGC")
 myData <- read.table("icgcData.txt", header = T, sep = "\t", check.names = F)
 
 require(UpSetR); require(plyr); require(ggplot2)
@@ -158,7 +158,7 @@ mutationTypeHistogram <- function(data, project) {
 pdf(file = "fig1.pdf", width = 14, height = 6.2)
 #Figure 1
 upset(myData, nsets = 8,
-      sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations", mb.ratio = c(0.55,0.45),
+      sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations", mb.ratio = c(0.6,0.4),
       order.by = "freq", nintersects = 30,
       queries = list(list(query = intersects, params = list("LUSC-US"), color = "#56b4e9"),
                      list(query = intersects, params = list("THCA-SA"), color = "#cc79a7"),
