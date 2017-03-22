@@ -84,9 +84,12 @@ myplot <- function(data, colour){
   
 }
 
+pdf(file = "supfig1.pdf", width = 8, height = 5)
 # sup fig 1
 upset(myData, nsets = 8, nintersects = 30, order.by = "freq")
+dev.off()
 
+pdf(file = "supfig4.pdf", width = 8, height = 5)
 # sup fig 4
 upset(myData, nsets = 8,
       sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations",
@@ -94,6 +97,7 @@ upset(myData, nsets = 8,
       queries = list(list(query = intersects, params = list("LUSC-US"), color = "#56b4e9"),
                      list(query = intersects, params = list("THCA-SA"), color = "#cc79a9"),
                      list(query = intersects, params = list("LUSC-KR", "LAML-KR"), color = "#009e73")))
+dev.off()
 
 # sup fig 5
 typeOfMutation <- as.character(myData$mutation)
@@ -111,13 +115,15 @@ typeOfMutation <- unlist(lapply(typeOfMutation, function(x) {
 }))
 myData$mutation_type <- typeOfMutation
 
-upset(myData, nsets = 8, mb.ratio = c(0.58, 0.42),
+pdf(file = "supfig5.pdf", width = 8, height = 5)
+upset(myData, nsets = 8, mb.ratio = c(0.65, 0.35),
       sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations",
       order.by = "freq", nintersects = 30,
       queries = list(list(query = intersects, params = list("LUSC-US"), color = "#56b4e9"),
                      list(query = intersects, params = list("THCA-SA"), color = "#cc79a7"),
                      list(query = intersects, params = list("LUSC-KR", "LAML-KR"), color = "#009e73"),
                      list(query = elements, params = list("mutation_type", "deletion"), color = "#e69f00", active = T)))
+dev.off()
 
 mutationTypeHistogram <- function(data, project) {
   countData <- count(data$mutation_type)
@@ -149,9 +155,10 @@ mutationTypeHistogram <- function(data, project) {
            + ggtitle("Counts per mutation type"))
 }
 
+pdf(file = "fig1.pdf", width = 14, height = 6.2)
 #Figure 1
 upset(myData, nsets = 8,
-      sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations", mb.ratio = c(0.5,0.5),
+      sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations", mb.ratio = c(0.55,0.45),
       order.by = "freq", nintersects = 30,
       queries = list(list(query = intersects, params = list("LUSC-US"), color = "#56b4e9"),
                      list(query = intersects, params = list("THCA-SA"), color = "#cc79a7"),
@@ -166,4 +173,4 @@ upset(myData, nsets = 8,
       set.metadata = list(data = setdata,
                           plots = list(list(type="hist", column = "Donors", assign =15),
                                        list(type="text", column = "Site", assign = 8))))
-
+dev.off()
