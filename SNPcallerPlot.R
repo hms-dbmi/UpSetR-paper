@@ -14,4 +14,6 @@ input <- c(
   "MAQ&FaSD&Bcftools&GATK"=8357
 )
 
+pdf(file = "SNPcaller.pdf", width = 8, height = 5)
 upset(fromExpression(input), order.by = "freq")
+dev.off()
