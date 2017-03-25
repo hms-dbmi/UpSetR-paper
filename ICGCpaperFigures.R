@@ -1,7 +1,6 @@
-setwd("/Users/jakeconway/Desktop/ICGC")
 myData <- read.table("icgcData.txt", header = T, sep = "\t", check.names = F)
 
-require(UpSetR); require(plyr); require(ggplot2)
+library(UpSetR)
 
 setdata <- data.frame(
   projects= c("THCA-US", "THCA-SA", "ORCA-IN", "BLCA-US",
