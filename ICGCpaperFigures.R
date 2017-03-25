@@ -85,7 +85,8 @@ myplot <- function(data, colour){
 
 pdf(file = "supfig1.pdf", width = 8, height = 5, paper='A4r', onefile = F)
 # sup fig 1
-upset(myData, nsets = 8, nintersects = 30, order.by = "freq")
+upset(myData, nsets = 8, nintersects = 30, sets.x.label = "Mutations",
+      mainbar.y.label = "Shared Mutations", order.by = "freq")
 dev.off()
 
 pdf(file = "supfig4.pdf", width = 8, height = 5, paper='A4r', onefile = F)
