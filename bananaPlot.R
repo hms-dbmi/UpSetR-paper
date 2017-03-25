@@ -66,7 +66,7 @@ input <- c(
   "M.acuminata&S.bicolor&B.distachyon&P.dactylifera&O.sativa&A.thaliana" = 7674
 )
 
-pdf(file = "banana.pdf", width = 19, height = 9, paper='A4r', onefile = F)
+pdf(file = "banana.pdf", width = 19, height = 9, onefile = F)
 upset(fromExpression(input), nintersects = 80, nsets = 6, order.by = "degree", decreasing = F, mb.ratio = c(0.6, 0.4),
       number.angles = 12, text.scale = 1.4, point.size = 2.8, line.size = 1)
 dev.off()
