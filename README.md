@@ -10,4 +10,4 @@ The `ICGCpaperFigures.R` script can be used to generate the ICGC UpSetR plots us
 The `bananaPlot.R` script can be used to generate the UpSetR version of the "Banana Venn" plot (D’Hont,  A.,  et  al.,  2012).
 
 ## SNP Caller
-The `SNPcallerPlot.R` script can be used to generate the UpSetR version of the SNP caller venn diagram presented in Xu et al., 2012.
+The `SNPcallerPlot.R` script can be used to generate the UpSetR version of the SNP caller Euler diagram presented in Xu et al., 2012.
