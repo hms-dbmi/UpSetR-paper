@@ -1,6 +1,6 @@
 myData <- read.table("icgcData.txt", header = T, sep = "\t", check.names = F)
 
-library(UpSetR)
+require(UpSetR); require(plyr); require(ggplot2)
 
 setdata <- data.frame(
   projects= c("THCA-US", "THCA-SA", "ORCA-IN", "BLCA-US",
