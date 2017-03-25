@@ -83,13 +83,13 @@ myplot <- function(data, colour){
   
 }
 
-pdf(file = "supfig1.pdf", width = 8, height = 5, paper='A4r', onefile = F)
+pdf(file = "supfig1.pdf", width = 8, height = 5, onefile = F)
 # sup fig 1
 upset(myData, nsets = 8, nintersects = 30, sets.x.label = "Mutations",
       mainbar.y.label = "Shared Mutations", order.by = "freq")
 dev.off()
 
-pdf(file = "supfig4.pdf", width = 8, height = 5, paper='A4r', onefile = F)
+pdf(file = "supfig4.pdf", width = 8, height = 5, onefile = F)
 # sup fig 4
 upset(myData, nsets = 8,
       sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations",
@@ -115,7 +115,7 @@ typeOfMutation <- unlist(lapply(typeOfMutation, function(x) {
 }))
 myData$mutation_type <- typeOfMutation
 
-pdf(file = "supfig5.pdf", width = 8, height = 5, paper='A4r', onefile = F)
+pdf(file = "supfig5.pdf", width = 8, height = 5, onefile = F)
 upset(myData, nsets = 8, mb.ratio = c(0.65, 0.35),
       sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations",
       order.by = "freq", nintersects = 30,
@@ -155,7 +155,7 @@ mutationTypeHistogram <- function(data, project) {
            + ggtitle("Counts per mutation type"))
 }
 
-pdf(file = "fig1.pdf", width = 14, height = 6.2, paper='A4r', onefile = F)
+pdf(file = "fig1.pdf", width = 14, height = 6.2, onefile = F)
 #Figure 1
 upset(myData, nsets = 8,
       sets.x.label = "Mutations", mainbar.y.label = "Shared Mutations", mb.ratio = c(0.6,0.4),
