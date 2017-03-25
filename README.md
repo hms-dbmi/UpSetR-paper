@@ -1,4 +1,4 @@
-# 2017 UpSetR paper submission
+# UpSetR Paper Figures
 
 ## Pulling Project Mutation Data From ICGC
 To pull mutation data from various projects on the ICGC data portal use the `ICGC_API_pull.R` script. Since the ICGC REST API has a pagination of 100 results, this script may take several minutes to run. It is also important to note that this API is actively being updated, so data is constantly being added and removed. To avoid running this script we've provided a text file (`icgcData.txt`) containing all of the data pulled on 3/18/2016, which is the data used to generate the UpSetR plots in the paper. 
