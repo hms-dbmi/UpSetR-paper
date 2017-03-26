@@ -1,5 +1,13 @@
 # UpSetR Paper Figures
 
+The scripts and data in this directory were used to generate the figures in the [UpSetR](https://github.com/hms-dbmi/UpSetR) paper:
+
+> Jake R Conway, Alexander Lex, Nils Gehlenborg
+> UpSetR: An R Package for the Visualization of Intersecting Sets and their Properties
+> bioRxiv 120600
+> doi: https://doi.org/10.1101/120600
+
+
 ## Pulling Project Mutation Data From ICGC
 To pull mutation data from various projects on the ICGC data portal use the `ICGC_API_pull.R` script. Since the ICGC REST API has a pagination of 100 results, this script may take several minutes to run. It is also important to note that this API is actively being updated, so data is constantly being added and removed. To avoid running this script we've provided a text file (`icgcData.txt`) containing all of the data pulled on 3/18/2016, which is the data used to generate the UpSetR plots in the paper. 
 
